@@ -18,6 +18,7 @@
 .button_first_left{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 .button_first_left button{
@@ -26,7 +27,7 @@
     line-height: 36px;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    min-width: calc(50% - 0.5rem);
     min-height: 6vh;
     display: flex;
     gap: 1rem;

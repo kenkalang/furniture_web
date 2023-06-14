@@ -7,10 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-.yarn/cache
 node_modules
 dist
+
 dist-ssr
+
+.yarn/cache
 *.local
 
 # Editor directories and files

@@ -10,7 +10,7 @@ import {
     faBriefcase,
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import ImageSlider from './assets/ImageSlider';
+import ImageCarousel from './assets/ImageCarousel';
 
 class App extends React.Component {
     constructor(props) {
@@ -150,9 +150,7 @@ class App extends React.Component {
                             <button className="btn">SEE MORE</button>
                         </div>
                         <div className="products_sell">
-                            <ImageSlider
-                                products={this.state.products[2].images}
-                            />
+                            <ImageCarousel images={this.state.products} />
                         </div>
                     </section>
                     <section className="newsletter">
