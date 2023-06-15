@@ -36,12 +36,12 @@ h1{
   letter-spacing: -0.01em;
 }
 
-h2{
-  margin: 0;
-}
-
 section{
   width: 100%;
+}
+
+h2{
+  margin: 0;
 }
 
 input{
@@ -99,4 +99,19 @@ button:hover {
 
 button.btn:hover {
   background-color: var(--color-primary-dark);
+}
+
+
+
+@media (max-width: 768px) {
+  h1{
+    text-align: center;
+    font-size: 26px;
+    line-height: normal;
+  }
+
+  h2{
+    font-size: 15px;
+  }
+
 }

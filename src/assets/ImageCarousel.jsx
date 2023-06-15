@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import $ from 'jquery';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faChevronLeft,
+    faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 const ImageCarousel = ({ images }) => {
     const carouselRef = useRef(null);
@@ -9,7 +14,20 @@ const ImageCarousel = ({ images }) => {
 
     useEffect(() => {
         const $carousel = $(carouselRef.current);
+        const updateSlidesToShow = () => {
+            const windowWidth = $(window).width();
+            let slidesToShow = 4;
 
+            if (windowWidth < 768) {
+                slidesToShow = 2;
+            }
+            $carousel.slick(
+                'slickSetOption',
+                'slidesToShow',
+                slidesToShow,
+                true,
+            );
+        };
         $carousel.on(
             'init reInit afterChange',
             (event, slick, currentSlide) => {
@@ -29,8 +47,12 @@ const ImageCarousel = ({ images }) => {
             arrows: false,
         });
 
+        updateSlidesToShow();
+        $(window).on('resize', updateSlidesToShow);
+
         return () => {
             $carousel.slick('unslick');
+            $(window).off('resize', updateSlidesToShow);
         };
     }, []);
 
@@ -79,10 +101,10 @@ const ImageCarousel = ({ images }) => {
             </div>
             <div className="navigation-buttons">
                 <button className="btn" onClick={goPrev}>
-                    Prev
+                    <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <button className="btn" onClick={goNext}>
-                    Next
+                    <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>
         </>

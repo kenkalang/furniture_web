@@ -8,6 +8,10 @@ header {
     box-shadow: var(--shadow);
 }
 
+.list_navbar{
+    display:none;
+}
+
 .navigation_items {
     display: flex;
     gap: 2rem;
@@ -93,3 +97,30 @@ img.slide-image{
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 768px) {
+    .slide-container{
+        width: 50vh;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    .slide-container img{
+        width: 90%;
+    }
+    
+    .slide-container h2{
+        text-overflow: ellipsis;
+        font-size: 18px;
+    }
+
+    .slide-container h3{
+        font-size: 14px;
+    }
+
+    .slide-container .cover_cost{
+        padding: 10px;
+    }
+
+  
+}
+  

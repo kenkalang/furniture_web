@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faAlignLeft } from '@fortawesome/free-solid-svg-icons';
 
 class Navbar extends React.Component {
     render() {
@@ -20,6 +20,7 @@ class Navbar extends React.Component {
                         </div>
                     </div>
                 </div>
+                <FontAwesomeIcon icon={faAlignLeft} className="list_navbar" />
                 <div className="account">
                     <div className="account-items">
                         <button className="btn">Sign Up</button>
